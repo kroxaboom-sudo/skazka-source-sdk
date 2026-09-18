@@ -1,22 +1,27 @@
 # Skazka Source SDK
 
-**RU:** Публичный контракт между приложениями Skazka и источниками контента.
+> RU — основной язык · EN — required second language
 
-**EN:** Public contract between Skazka applications and content sources.
+## RU
 
-## Что здесь будет / What belongs here
+Публичные контракты для источников, Registry-клиента и адаптеров.
 
-- Source API;
-- стабильная identity-модель source/content;
-- Registry client contracts;
-- generic adapter interfaces;
-- безопасные примеры;
-- test fixtures и compatibility tests.
+**Текущий статус:** репозиторий создан как целевая граница модуля. Рабочий код переносится из существующих проектов поэтапно, с тестами и без копирования project-specific зависимостей.
 
-## Граница / Boundary
+**Граница модуля:** generic source API and safe adapters; private routes, cookies, secrets and protected source logic stay out.
 
-Закрытые адаптеры, credentials, антиабуз-логика, приватные зеркала и production routing не публикуются.
+Перед первым стабильным релизом здесь появятся собственные versioning, тесты, changelog и лицензия. До выбора лицензии публикация кода не означает автоматическое разрешение на его повторное использование.
 
-## Зачем это нужно / Why this exists
+## EN
 
-Клиент должен работать с логическим источником, а не быть намертво привязан к одному hostname. Домены и зеркала могут меняться, identity контента — нет.
+Public source contracts, Registry client, and adapter interfaces.
+
+**Current status:** this repository is the target module boundary. Working code is being extracted from existing projects incrementally, with tests and without copying project-specific dependencies.
+
+**Module boundary:** generic source API and safe adapters; private routes, cookies, secrets and protected source logic stay out.
+
+Before the first stable release, this repository will get its own versioning, tests, changelog, and license. Until a license is selected, publishing the source does not automatically grant reuse rights.
+
+## Development rules / Правила разработки
+
+See [DEVELOPMENT_RULES.md](DEVELOPMENT_RULES.md).
