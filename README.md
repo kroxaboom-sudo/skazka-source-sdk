@@ -4,24 +4,35 @@
 
 ## RU
 
-Публичные контракты для источников, Registry-клиента и адаптеров.
+Публичные source-neutral контракты для источников и Registry.
 
-**Текущий статус:** репозиторий создан как целевая граница модуля. Рабочий код переносится из существующих проектов поэтапно, с тестами и без копирования project-specific зависимостей.
+**Статус:** `0.1.0-preview`.
 
-**Граница модуля:** generic source API and safe adapters; private routes, cookies, secrets and protected source logic stay out.
+- `source-api` — capabilities, минимальный `SourceAdapter` и registry code-owned адаптеров.
+- `registry-core` — модель endpoint, независимые trust/health состояния, приоритет и безопасная проверка публичных hostname.
+- Remote manifest не может устанавливать исполняемый код; executable adapters остаются code-owned.
+- Конкретные parser rules, production hosts, private routes, credentials и старые trust roots не входят в public SDK.
 
-Перед первым стабильным релизом здесь появятся собственные versioning, тесты, changelog и лицензия. До выбора лицензии публикация кода не означает автоматическое разрешение на его повторное использование.
+Проверено на HOSTKEY: source SDK self-test — PASS; Gradle `build` обоих модулей — PASS.
 
 ## EN
 
-Public source contracts, Registry client, and adapter interfaces.
+Public source-neutral contracts for content sources and the Registry.
 
-**Current status:** this repository is the target module boundary. Working code is being extracted from existing projects incrementally, with tests and without copying project-specific dependencies.
+**Status:** `0.1.0-preview`.
 
-**Module boundary:** generic source API and safe adapters; private routes, cookies, secrets and protected source logic stay out.
+- `source-api` — capabilities, minimal `SourceAdapter`, and a registry for code-owned adapters.
+- `registry-core` — endpoint model, separate trust/health state, priority, and safe public-host validation.
+- Remote manifests cannot install executable code; executable adapters remain code-owned.
+- Concrete parser rules, production hosts, private routes, credentials, and legacy trust roots are outside the public SDK.
 
-Before the first stable release, this repository will get its own versioning, tests, changelog, and license. Until a license is selected, publishing the source does not automatically grant reuse rights.
+Verified on HOSTKEY: source SDK self-test — PASS; Gradle `build` for both modules — PASS.
 
-## Development rules / Правила разработки
+## Coordinates / Координаты
+
+- `com.kroxaboom.skazka:source-api:0.1.0-preview`
+- `com.kroxaboom.skazka:registry-core:0.1.0-preview`
 
 See [DEVELOPMENT_RULES.md](DEVELOPMENT_RULES.md).
+
+> A license will be selected before the first stable public release. Until then, publication of the source does not grant reuse rights.
